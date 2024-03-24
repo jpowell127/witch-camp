@@ -1,10 +1,10 @@
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import witchesPic from '../public/witches.webp';
 
 export default function Home() {
   return (
     <main>
-      <div className='isolate overflow-hidden pt-14'>
+      <div className='isolate pt-14'>
         <div className='absolute inset-0 -z-10 h-full w-full object-cover'>
           <Image
             src={witchesPic}
@@ -41,9 +41,10 @@ export default function Home() {
               Witch Camp
             </h1>
             <p className='mt-6 text-lg leading-8 text-gray-300'>
-              Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
-              lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
-              fugiat aliqua.
+              Join us under the moonlit skies for nightly rituals that celebrate
+              the cycles of the earth and the magic within us all. Connect with
+              a community of like-minded souls as we weave spells, share
+              stories, and revel in the mystical energies that bind us.
             </p>
             <div className='mt-10 flex items-center justify-center gap-x-6'>
               <a
