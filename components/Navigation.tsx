@@ -5,12 +5,13 @@ import { Dialog } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import Image from 'next/legacy/image';
 import witchCampLogo from '../public/witchCampLogo.webp';
+import Link from 'next/link';
 
 const navigation = [
-  { name: 'About', href: '#' },
-  { name: 'Blog', href: '#' },
-  { name: 'Store', href: '#' },
-  { name: 'Contact', href: '#' },
+  { name: 'About', href: '/about' },
+  { name: 'Blog', href: '/blog' },
+  { name: 'Store', href: '/store' },
+  { name: 'Contact', href: '/contact' },
 ];
 
 const Navigation = () => {
@@ -22,12 +23,14 @@ const Navigation = () => {
         className='mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8'
         aria-label='Global'
       >
-        <a href='/' className='-m-1.5 p-1.5'>
-          <span className='sr-only'>Witch Camp</span>
-          <div className='h-16 w-auto'>
-            <Image src={witchCampLogo} alt='' width={64} height={64} />
-          </div>
-        </a>
+        <div className='-m-1.5 p-1.5'>
+          <Link href='/'>
+            <span className='sr-only'>Witch Camp</span>
+            <div className='h-16 w-auto'>
+              <Image src={witchCampLogo} alt='' width={64} height={64} />
+            </div>
+          </Link>
+        </div>
         <div className='flex lg:hidden'>
           <button
             type='button'
@@ -40,13 +43,12 @@ const Navigation = () => {
         </div>
         <div className='hidden lg:flex lg:gap-x-12'>
           {navigation.map(item => (
-            <a
-              key={item.name}
-              href={item.href}
+            <div
               className='text-sm font-semibold leading-6 text-white'
+              key={item.name}
             >
-              {item.name}
-            </a>
+              <Link href={item.href}>{item.name}</Link>
+            </div>
           ))}
         </div>
       </nav>
