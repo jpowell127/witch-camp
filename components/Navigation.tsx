@@ -3,33 +3,29 @@
 import { useState } from 'react';
 import { Dialog } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
-import Image from "next/legacy/image";
+import Image from 'next/legacy/image';
+import witchCampLogo from '../public/witchCampLogo.webp';
 
 const navigation = [
-  { name: 'Product', href: '#' },
-  { name: 'Features', href: '#' },
-  { name: 'Marketplace', href: '#' },
-  { name: 'Company', href: '#' },
+  { name: 'About', href: '#' },
+  { name: 'Blog', href: '#' },
+  { name: 'Store', href: '#' },
+  { name: 'Contact', href: '#' },
 ];
 
 const Navigation = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className='bg-black'>
+    <header className='bg-black/50'>
       <nav
         className='mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8'
         aria-label='Global'
       >
         <a href='/' className='-m-1.5 p-1.5'>
           <span className='sr-only'>Witch Camp</span>
-          <div className='h-8 w-auto'>
-            <Image
-              src='https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600'
-              alt=''
-              width={32}
-              height={32}
-            />
+          <div className='h-16 w-auto'>
+            <Image src={witchCampLogo} alt='' width={64} height={64} />
           </div>
         </a>
         <div className='flex lg:hidden'>
@@ -52,9 +48,6 @@ const Navigation = () => {
               {item.name}
             </a>
           ))}
-          <a href='/' className='text-sm font-semibold leading-6 text-white'>
-            Log in <span aria-hidden='true'>&rarr;</span>
-          </a>
         </div>
       </nav>
       <Dialog
@@ -67,7 +60,7 @@ const Navigation = () => {
         <Dialog.Panel className='fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10'>
           <div className='flex items-center justify-between'>
             <a href='/' className='-m-1.5 p-1.5'>
-              <span className='sr-only'>Your Company</span>
+              <span className='sr-only'>Witch Camp</span>
               <div className='h-8 w-auto'>
                 <Image
                   src='https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600'
@@ -98,14 +91,6 @@ const Navigation = () => {
                     {item.name}
                   </a>
                 ))}
-              </div>
-              <div className='py-6'>
-                <a
-                  href='/'
-                  className='-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50'
-                >
-                  Log in
-                </a>
               </div>
             </div>
           </div>
