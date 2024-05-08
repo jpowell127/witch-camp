@@ -1,3 +1,5 @@
+import { client } from '@/utils/client';
+
 const About = () => {
   return (
     <div className='text-center'>
