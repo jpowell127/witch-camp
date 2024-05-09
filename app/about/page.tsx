@@ -7,7 +7,7 @@ type AboutPage = {
 
 export default async function About() {
   const [{ title, text }] = await client.fetch<AboutPage[]>(
-    `*[_type == "page" && title == "About Witch Camp"] {
+    `*[_type == "page" && slug.current == "about"] {
     title,
     "text": content[0].children[0].text
   }`,
